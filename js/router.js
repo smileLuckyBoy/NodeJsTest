@@ -1,9 +1,10 @@
 function route(pathname, handler) {
     console.log('pathname is ' + pathname);
     if (typeof handler[pathname] === 'function')
-        handler[pathname]();
+        return handler[pathname]();
     else
-        console.log('pathname is illegal');
+    	return "pathname is illegal";
+        // console.log('pathname is illegal');
 }
 
 exports.route = route;

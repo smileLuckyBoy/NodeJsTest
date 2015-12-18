@@ -8,10 +8,11 @@ function start(route,handler){
 		console.log('receive the request from' + pathname);
 
 		//安装不同请求进行路由
-		route(pathname,handler);
+		var output = route(pathname,handler);
 
 		response.writeHead(200, {"Content-Type":"text/plain"})
-		response.write("hello world");
+		// response.write("hello world");
+		response.write(output);
 
 		response.end();
 	}
